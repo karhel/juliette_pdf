@@ -60,6 +60,6 @@ final class HomeController extends AbstractController
 
 
         // Si tout est ok je redirige vers la liste des users
-        return $this->redirectToRoute('app_home', ['user_created' => 5]);
+        return $this->redirectToRoute('app_home', ['user_created' => 5], 307);
     }
 }
