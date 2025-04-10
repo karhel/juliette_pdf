@@ -7,4 +7,9 @@ import './bootstrap.js';
  */
 import './styles/app.css';
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+// Prevent multiple submit on form
+const submitUserForm = document.querySelector("form[name='user_form']");
+submitUserForm.addEventListener('submit', function(e) {
+	const submitButton = document.querySelector("#user_form_submit");
+	submitButton.setAttribute('disabled', 'disabled');
+});

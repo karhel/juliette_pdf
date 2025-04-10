@@ -35,6 +35,8 @@ final class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
+            // avec le code HTTP 307 en direction, il y a forward du contenu du $_POST et donc de la partie formulaire d'inscription
+            // et donc possibilité de récupérer la valeur du champ "password"
             return $this->redirectToRoute('app_user_create_pdf', [], 307);
         }
 
